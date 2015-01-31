@@ -16,17 +16,18 @@ GPIO.setup(buttonpin, GPIO.IN)
 def is_pressed(pin):
   return not GPIO.input(pin)
 
-while True:
-  print GPIO.input(buttonpin)
-  # if button is depressed(0):
-  # if not GPIO.input(buttonpin):
-  if is_pressed(buttonpin):
-    # turn on led
-    GPIO.output(ledpin, True)
-  else:
-    # turn off led
-    GPIO.output(ledpin, False)
+def turn_on(pin):
+  GPIO.output(pin, True)
 
+def turn_off(pin):
+  GPIO.output(pin, False)  
+  
+
+while True:
+  if is_pressed(buttonpin):
+    turn_on(ledpin)
+  else:
+    turn_off(ledpin)
 
  
 
