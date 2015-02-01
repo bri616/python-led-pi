@@ -26,7 +26,10 @@ def change_led(letter):
 
 for light_event in pattern:
   for character in light_event:
-    if character.isalpha():
+    if character == "O":
+      for pin in ledpins.values():
+        GPIO.output(pin, False)
+    elif character.isalpha():
       change_led(character)
     else:
       time.sleep(int(character))
