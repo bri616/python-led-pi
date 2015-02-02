@@ -26,7 +26,7 @@ def parse_pattern(pattern):
         all_leds_off()
   
 if __name__ == "__main__":
-  # red led is in GPIO 17, blue is in 27, green is in 12
+  # red led is in GPIO 17, blue is in 27, green is in 18
   ledpins = {"r": 11, "b": 13, "g": 12}
 
   # pattern string is Color and Persistence Time "R2" or "RGB3"
